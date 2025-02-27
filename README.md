@@ -39,7 +39,7 @@ The repository must live in the `.dotfiles/` folder, directly under the user's h
 The best way to get the files there is by cloning the repository, so that any changes can be commited and push back to github. Cloning can be done using `git`, if it's already installed on the system, using 
 
 ```bash
-git clone https://github.com/rwijtvliet/dotfiles.git ~/.dotfiles
+git clone https://github.com/laguill/dotfiles.git ~/.dotfiles
 ``` 
 
 Alternatively, if `git` is not yet installed, the repository can be manually downloaded and copied to the `.dotfiles/` folder, and the clone command can be ran after `git` has been installed (git installation is done by this repository).
