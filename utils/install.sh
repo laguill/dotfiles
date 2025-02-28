@@ -34,6 +34,8 @@ case "$OS" in
         pkg install npm fzf ripgrep samba
         pkg update
         pkg upgrade
-    
+        ;;
+
+    * )    
         ;;
 esac
