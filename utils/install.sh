@@ -31,7 +31,7 @@ case "$OS" in
     "termux" )
         pkg update
         pkg upgrade
-        pkg install npm fzf ripgrep samba
+        pkg install fzf ripgrep samba
         pkg update
         pkg upgrade
         ;;
