@@ -12,7 +12,7 @@ case "$OS" in
         ;;
 
     "windows" )
-        scoop install wget nodejs fzf
+        scoop install wget nodejs f wzf
 
         scoop update *
         ;;
@@ -34,6 +34,6 @@ case "$OS" in
         pkg install npm fzf ripgrep samba
         pkg update
         pkg upgrade
-    * )
+    
         ;;
 esac
