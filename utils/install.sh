@@ -4,8 +4,9 @@ source ../shared.sh
 
 case "$OS" in
     "linux" )
-        sudo apt install npm snapd fzf ripgrep cifs-utils
-
+        sudo apt update
+        sudo apt upgrade
+        sudo apt install npm fzf ripgrep cifs-utils # snapd
         sudo apt update
         sudo apt upgrade
         ;;
@@ -26,7 +27,13 @@ case "$OS" in
         todo "installed java - but probably won't work anyway. "
         brew install npm wget nodejs rg fd fzf
         ;;
-
+    
+    "termux" )
+        pkg update
+        pkg upgrade
+        pkg install npm fzf ripgrep samba
+        pkg update
+        pkg upgrade
     * )
         ;;
 esac

@@ -247,6 +247,8 @@ elif [[ "${OS_long,,}" == *"mingw"* ]] || [[ "${OS_long,,}" == *"msys"* ]]; then
     OS="windows"
 elif [[ "${OS_long,,}" == *"darwin"* ]]; then
     OS="macos"
+elif [[ "${OS_long,,}" == *"android"* ]]; then
+    OS="termux"
 else
     fail "unknown operating system. Value of 'uname --all' is $OS_long"
     exit 1

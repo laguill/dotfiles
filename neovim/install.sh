@@ -14,17 +14,19 @@ case "$OS" in
 	sudo apt install ripgrep
 	sudo npm install -g  neovim tree-sitter-cli
 	# . app itself
-	mkdir -p "$HOME/.local/bin"
-	curl -Lo "$HOME/.local/bin/nvim" https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-	chmod u+x "$HOME/.local/bin/nvim"
+	# mkdir -p "$HOME/.local/bin"
+	# curl -Lo "$HOME/.local/bin/nvim" https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+	# chmod u+x "$HOME/.local/bin/nvim"
 	#link_public_resource "$HOME/.local/bin/nvim" "nvim.appimage"
 	# (alternative: install from apt, but often outdated)
 	# sudo apt install neovim
+	
+	brew install neovim
 
 	# virtual environment specifically for neovim plugins, in this folder
-	info "Creating python environment for neovim"
-	sudo apt install python3.11
-	poetry install
+	# info "Creating python environment for neovim"
+	# sudo apt install python3.11
+	# poetry install
 	
 	# add user config
 	info "Adding user configs"
@@ -79,6 +81,41 @@ case "$OS" in
 	link_public_resource "./alternative_configs/lazyvim" "$HOME/.config/nvim-lazyvim"
 	link_public_resource "./alternative_configs/astronvim" "$HOME/.config/nvim-astronvim"
 	;;
+
+"termux")
+	info "Removing old installation"
+	rm -rf "$HOME/.local/share/nvim"
+	rm -rf "$HOME/.config/nvim"
+
+	# install nvim
+	info "Installing app"
+	# . some utilities
+	pkg update
+	pkg install "tur-repo
+	pkg install ripgrep
+	pkg npm install -g  neovim tree-sitter-cli
+	# . app itself
+	# mkdir -p "$HOME/.local/bin"
+	# curl -Lo "$HOME/.local/bin/nvim" https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+	# chmod u+x "$HOME/.local/bin/nvim"
+	#link_public_resource "$HOME/.local/bin/nvim" "nvim.appimage"
+	# (alternative: install from apt, but often outdated)
+	# sudo apt install neovim
+	
+	brew install neovim
+
+	# virtual environment specifically for neovim plugins, in this folder
+	# info "Creating python environment for neovim"
+	# sudo apt install python3.11
+	# poetry install
+	
+	# add user config
+	info "Adding user configs"
+	link_public_resource "./nvim" "$HOME/.config/nvim"
+	link_public_resource "./alternative_configs/lazyvim" "$HOME/.config/nvim-lazyvim"
+	link_public_resource "./alternative_configs/astronvim" "$HOME/.config/nvim-astronvim"
+	;;
+
 
 *) ;;
 esac
